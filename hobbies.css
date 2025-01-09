@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e8e8e8;
+}
+
+/* Navbar Styling */
+header {
+    background-color: #43a1c6;
+    padding: 16.3px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between; /* Separates left and right sections */
+    align-items: center;
+    padding: 0 20px;
+}
+
+header nav .nav-left,
+header nav .nav-right {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav .nav-left li,
+header nav .nav-right li {
+    margin: 0 10px;
+}
+
+header nav .nav-left li a,
+header nav .nav-right li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    
+}
+
+header nav .nav-left li a:hover,
+header nav .nav-right li a:hover {
+    background-color: #246d8d; /* Slightly darker blue on hover */
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: #246d8d; /* Slightly darker blue on hover/active */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin: 2rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.hobbies-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.2);
+
+    padding: 20px;
+  }
+  
+  .hobbies-container h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #000000;
+    font-size: 2.5em;
+  }
+  
+  .hobbies-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .hobbies-card h2 {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .hobbies-card p {
+    margin: 0;
+  }
+  
+  .hobbies-card a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .hobbies-card a:hover {
+    text-decoration: underline;
+  }
+
+  .center-button {
+    background-color: #43a1c6; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.center-button:hover {
+    background-color: #246d8d; /* Darker blue on hover */
+}
+
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 16px; /* Adjust font size for smaller screens */
+    }
+    .hobbies {
+      padding: 10px;
+      flex-direction: column; /* Stack elements vertically */
+    }
+  }
