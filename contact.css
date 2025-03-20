@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e8e8e8;
+}
+
+header {
+    background-color: #43a1c6;
+    padding: 13px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between; /* Separates left and right sections */
+    align-items: center;
+    padding: 0 20px;
+}
+
+header nav .nav-left,
+header nav .nav-right {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav .nav-left li,
+header nav .nav-right li {
+    margin: 0 10px;
+}
+
+header nav .nav-left li a,
+header nav .nav-right li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+header nav .nav-left li a:hover,
+header nav .nav-right li a:hover {
+    background-color: #246d8d; /* Slightly darker blue on hover */
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: #246d8d; /* Slightly darker blue on hover/active */
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin: 2rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.photo-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.photo-section img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info-section {
+    flex: 2;
+    height: 500px;
+}
+
+.info-section h1 {
+    font-size: 3.5rem;
+    font-family: 'Segoe UI', Tahoma, sans-serif black;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.info-section p {
+    font-style: italic;
+    color: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #e8e8e8;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: #3498db;
+    padding: 10px 0;
+  }
+  
+  .navbar li {
+    margin: 0 15px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar a:hover,
+  .navbar .active {
+    background-color: #2980b9;
+    border-radius: 5px;
+  }
+  
+  /* Contact Section */
+  .contact-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .contact-container h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #000000;
+    font-size: 2.5em;
+  }
+  
+  .contact-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .contact-card h2 {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .contact-card p {
+    margin: 0;
+  }
+  
+  .contact-card a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .contact-card a:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 16px; /* Adjust font size for smaller screens */
+    }
+    .container {
+      padding: 10px;
+      flex-direction: column; /* Stack elements vertically */
+    }
+  }
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  header nav .nav-list {
+      display: none; /* Hide the nav list by default */
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #43a1c6;
+      padding: 10px 0;
+      z-index: 100;
+  }
+
+  header nav .nav-list.active {
+      display: flex; /* Show nav list when active */
+  }
+
+  header nav .nav-list li {
+      margin: 5px 0; /* Adjust spacing for vertical layout */
+  }
+
+  header nav .nav-list li a {
+      text-align: center;
+      padding: 10px;
+      width: 100%; /* Make links fill the container */
+  }
+
+  .menu-toggle {
+      display: flex; /* Show menu toggle on smaller screens */
+  }
+}
