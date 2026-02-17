@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajatesh Paul - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --container-bg: #778da9;
+            --bg-primary: #0d1b2a;
+            --bg-secondary: #669bbc;
+            --bg-card: #151a2e;
+            --text-primary: #e0e1dd;
+            --text-secondary: #b8c1ec;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --linkedin-bg: #0077b5;
+            --accent-color: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --glow: rgba(99, 102, 241, 0.3);
+            text-align: justify;
+
+            /* === NAVBAR DARK MODE CUSTOMIZATION === */
+            --navbar-bg: #669bbc;
+            --navbar-border-bottom: rgba(255, 255, 255, 0.05);
+            --navbar-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --navbar-link-color: #e0e1dd;
+            --navbar-link-hover-color: #e0e1dd;
+            --navbar-link-underline-color: #e0e1dd;
+            --navbar-mobile-bg: #669bbc;
+            --navbar-toggle-bg: #778da9;
+            --navbar-toggle-border: #e0e1dd;
+            --navbar-slider-color: #e0e1dd;
+
+            /* === CARD / CONTAINER DARK MODE CUSTOMIZATION === */
+            /* About page paragraph cards */
+            --card-about-bg: #20303f;
+            --card-about-text: #e0e1dd;
+            --card-about-border: rgba(255, 255, 255, 0.08);
+            --card-about-hover-border: #e0e1dd;
+
+            /* Skills section cards */
+            --card-skills-bg: #20303f;
+            --card-skills-text: #e0e1dd;
+            --card-skills-heading-color: #e0e1dd;
+            --card-skills-border: rgba(255, 255, 255, 0.05);
+            --card-skills-hover-border: #e0e1dd;
+
+            /* Education cards */
+            --card-edu-bg: #20303f;
+            --card-edu-heading-bg: rgba(255, 255, 255, 0.02);
+            --card-edu-heading-border: rgba(255, 255, 255, 0.05);
+            --card-edu-text: #e0e1dd;
+            --card-edu-border: rgba(255, 255, 255, 0.08);
+            --card-edu-hover-border: #e0e1dd;
+
+            /* Contact section cards */
+            --card-contact-bg: #20303f;
+            --card-contact-text: #e0e1dd;
+            --card-contact-heading-color: #e0e1dd;
+            --card-contact-border: rgba(255, 255, 255, 0.05);
+            --card-contact-hover-border: #e0e1dd;
+            --card-contact-link-color: #e0e1dd;
+
+            /* Project item cards */
+            --card-project-bg: #20303f;
+            --card-project-text: #e0e1dd;
+            --card-project-border: rgba(255, 255, 255, 0.05);
+            --card-project-accent-border: #6366f1;
+
+            /* Footer */
+            --footer-bg: #778da9;
+            --footer-text: #e0e1dd;
+            --footer-border: rgba(255, 255, 255, 0.05);
+        }
+
+        [data-theme="light"] {
+            --container-bg: #9fb3c8;
+            --bg-primary: #c7c7c7;
+            --bg-secondary: #669bbc;
+            --bg-card: #ffffff;
+            --text-primary: #0d1b2a;
+            --text-secondary: #475569;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --linkedin-bg: #0077b5;
+            --accent-color: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --glow: rgba(99, 102, 241, 0.2);
+
+            /* === NAVBAR LIGHT MODE CUSTOMIZATION === */
+            --navbar-bg: #669bbc;
+            --navbar-border-bottom: rgba(0, 0, 0, 0.06);
+            --navbar-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            --navbar-link-color: #0d1b2a;
+            --navbar-link-hover-color: #0d1b2a;
+            --navbar-link-underline-color: #0d1b2a;
+            --navbar-mobile-bg: #669bbc;
+            --navbar-toggle-bg: #9fb3c8;
+            --navbar-toggle-border: #0d1b2a;
+            --navbar-slider-color: #0d1b2a;
+
+            /* === CARD / CONTAINER LIGHT MODE CUSTOMIZATION === */
+            /* About page paragraph cards */
+            --card-about-bg: #a6a8a9;
+            --card-about-text: #000000;
+            --card-about-border: rgba(0, 0, 0, 0.07);
+            --card-about-hover-border: #0d1b2a;
+
+            /* Skills section cards */
+            --card-skills-bg: #a6a8a9;
+            --card-skills-text: #000000;
+            --card-skills-heading-color: #0d1b2a;
+            --card-skills-border: rgba(0, 0, 0, 0.06);
+            --card-skills-hover-border: #0d1b2a;
+
+            /* Education cards */
+            --card-edu-bg: #a6a8a9;
+            --card-edu-heading-bg: rgba(0, 0, 0, 0.02);
+            --card-edu-heading-border: rgba(0, 0, 0, 0.05);
+            --card-edu-text: #000000;
+            --card-edu-border: rgba(0, 0, 0, 0.07);
+            --card-edu-hover-border: #0d1b2a;
+
+            /* Contact section cards */
+            --card-contact-bg: #a6a8a9;
+            --card-contact-text: #000000;
+            --card-contact-heading-color: #0d1b2a;
+            --card-contact-border: rgba(0, 0, 0, 0.06);
+            --card-contact-hover-border: #0d1b2a;
+            --card-contact-link-color: #1a4d7a;
+
+            /* Project item cards */
+            --card-project-bg: #a6a8a9;
+            --card-project-text: #000000;
+            text-align: justify;
+            --card-project-border: rgba(0, 0, 0, 0.06);
+            --card-project-accent-border: #6366f1;
+
+            /* Footer */
+            --footer-bg: #a6a8a9;
+            --footer-text: #000000;
+            --footer-border: rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--navbar-bg);
+            border-bottom: 1px solid var(--navbar-border-bottom);
+            box-shadow: var(--navbar-box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-left a {
+            color: var(--navbar-link-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-left a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--navbar-link-underline-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-left a:hover::after {
+            width: 100%;
+        }
+
+        .nav-left a:hover {
+            color: var(--navbar-link-hover-color);
+            transform: translateY(-2px);
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .linkedin-btn {
+            background: transparent;
+            background: var(--linkedin-bg);
+            color: #e0e1dd;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        
+        
+        .linkedin-icon-only {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        
+
+        
+        .linkedin-icon-only .linkedin-logo {
+            width: 28px;
+            height: 28px;
+        }
+    
+
+        .linkedin-btn:hover {
+            background: transparent;
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .linkedin-logo {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .linkedin-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .linkedin-logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Theme Toggle Container */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        /* Theme Toggle - Pill Shape */
+        
+        .theme-toggle {
+            background: var(--navbar-toggle-bg);
+            border: 2px solid var(--navbar-toggle-border);
+            border-radius: 50px;
+            width: 48px;
+            height: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+    
+
+        .theme-toggle:hover {
+            opacity: 0.8;
+        }
+
+        
+        .theme-icon-img {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+        }
+
+        .theme-icon {
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        
+        .theme-slider {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--navbar-slider-color);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            left: 3px;
+            z-index: 1;
+        }
+    
+
+        /* Dark mode - slider on right */
+        [data-theme="dark"] 
+        .theme-slider {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--navbar-slider-color);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            left: 3px;
+            z-index: 1;
+        }
+    
+
+        /* Light mode - slider on left */
+        [data-theme="light"] 
+        .theme-slider {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--navbar-slider-color);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            left: 3px;
+            z-index: 1;
+        }
+    
+
+        /* Main Container */
+        main {
+            min-height: calc(100vh - 80px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page {
+            display: none;
+            animation: slideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Home/About Hero Section */
+        
+        .hero-section {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 5rem;
+            position: relative;
+        }
+    
+
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-text-root h2 {
+            font-size: 1.2rem;
+            color: #e0e1dd;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding-bottom: -1px;
+        }
+
+        
+        .hero-text h1 {
+            font-size: 3.2rem;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+    
+
+        
+        .hero-text-root p {
+            font-size: 1.15rem;
+            color: #908d8d;
+            line-height: 1.7;
+        }
+    
+
+        .hero-image {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        
+        .hero-image img {
+            max-width: 360px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+    
+
+        .hero-image img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* About Me Page */
+        .about-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            text-align: justify;
+        }
+
+        .about-page h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        
+        .about-page p {
+            text-align: justify;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: var(--card-about-text);
+            background: var(--card-about-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--card-about-border);
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-out backwards;
+        }
+    
+
+        .about-page p:nth-child(2) { animation-delay: 0.1s; }
+        .about-page p:nth-child(3) { animation-delay: 0.2s; }
+        .about-page p:nth-child(4) { animation-delay: 0.3s; }
+
+        .about-page p:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px var(--shadow);
+            border-color: var(--card-about-hover-border);
+        }
+
+        /* Education Page */
+        .education-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+
+        .education-page h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .education-grid {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            }
+
+        .education-card {
+            background: var(--card-edu-bg);
+            padding: 0;
+            border-radius: 4px;
+            border: 1px solid var(--card-edu-border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-out backwards;
+        }
+
+        .education-card:nth-child(1) { animation-delay: 0.1s; }
+        .education-card:nth-child(2) { animation-delay: 0.2s; }
+        .education-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .education-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            border-color: var(--card-edu-hover-border);
+        }
+
+        
+        .education-card h3 {
+            font-size: 1.4rem;
+            margin: 0;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            color: var(--card-edu-text);
+            background: var(--card-edu-heading-bg);
+            border-bottom: 1px solid var(--card-edu-heading-border);
+        }
+    
+
+        
+        .education-card-content {
+            padding: 1rem 1.5rem 1.2rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+        }
+    
+
+        .education-card p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--card-edu-text);
+            line-height: 1.6;
+        }
+
+        .education-card p:first-child {
+            flex: 1 1 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card strong {
+            color: var(--card-edu-text);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #edeeee;
+            color: #000000 !important;
+            padding: 0.65rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+
+        .download-btn-root {
+            display: inline-block;
+            background: #669bbc !important;
+            color: #e0e1dd;
+            padding: 0.65rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+
+
+        .download-btn:hover {
+            background: #7b8c97;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--glow);
+        }
+
+        /* Skills Page */
+        .skills-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+
+        .skills-page h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        
+        .skills-section {
+            background: var(--card-skills-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--card-skills-border);
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+
+        .skills-section:nth-child(2) { animation-delay: 0.1s; }
+        .skills-section:nth-child(3) { animation-delay: 0.2s; }
+        .skills-section:nth-child(4) { animation-delay: 0.3s; }
+
+        
+        
+        
+        
+        .skills-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--card-skills-heading-color);
+        }
+    
+    
+    
+    
+
+        
+
+        
+        .skills-section p {
+            font-size: 1.1rem;
+            color: var(--card-skills-text);
+            margin: 0;
+            line-height: 1.7;
+            background: none;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    
+
+        .skills-section p:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .projects-section {
+            margin-top: 2.5rem;
+            animation: fadeIn 0.8s ease-out backwards;
+            animation-delay: 0.4s;
+        }
+
+        .projects-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            background: var(--card-project-bg);
+            padding: 1.2rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid var(--card-project-border);
+            color: var(--card-project-text);
+        }
+
+        .project-item {
+            background: var(--card-project-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 1.2rem;
+            border: 1px solid var(--card-project-border);
+            border-left: 3px solid var(--card-project-accent-border);
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .project-item p {
+            font-size: 1.05rem;
+            color: var(--card-project-text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .project-item strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Contact Page */
+        .contact-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+
+        .contact-page h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .contact-section {
+            background: var(--card-contact-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--card-contact-border);
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-out backwards;
+        }
+
+        .contact-section:nth-child(2) { animation-delay: 0.1s; }
+        .contact-section:nth-child(3) { animation-delay: 0.2s; }
+        .contact-section:nth-child(4) { animation-delay: 0.3s; }
+
+        .contact-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px var(--shadow);
+            border-color: var(--card-contact-hover-border);
+        }
+
+        .contact-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--card-contact-heading-color);
+        }
+
+        .contact-section p {
+            font-size: 1.05rem;
+            color: var(--card-contact-text);
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .contact-section a {
+            color: var(--card-contact-link-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-section a:hover {
+            color: var(--card-contact-link-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            text-align: center;
+            padding: 2rem;
+            color: var(--footer-text);
+            border-top: 1px solid var(--footer-border);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-image {
+                justify-content: center;
+            }
+
+            
+        .hero-text-root h1 {
+            font-size: 3.2rem;
+            color: #e0e1dd;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+    
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-page,
+            .education-page,
+            .skills-page,
+            .contact-page {
+                padding: 2rem 1rem;
+                width: 100%;
+                text-align: justify;
+            }
+        }
+
+        
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 1.5rem .5rem;
+            }
+
+            .hero-text-root h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text-root p {
+                font-size: 1rem;
+            }
+
+            .hero-image img {
+                max-width: 260px;
+            }
+
+            .hero-content {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-left {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .nav-left a {
+                font-size: 1.1rem;
+            }
+
+            
+        .hero-text h1 {
+            font-size: 3.2rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+    
+
+            .hero-text-root h2{
+                color: #e0e1dd;
+            }
+            
+        .hero-text-root p {
+            font-size: 1.15rem;
+            color: #e0e1dd;
+            line-height: 1.7;
+        }
+    
+
+            .about-page h1,
+            .education-page h1,
+            .skills-page h1,
+            .contact-page h1 {
+                font-size: 2.5rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    
+        /* Burger Button */
+        .burger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .burger span {
+            width: 28px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Navbar */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .nav-left {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--navbar-mobile-bg);
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 2rem 0;
+                display: none;
+                box-shadow: 0 4px 10px var(--shadow);
+            }
+
+            .nav-left.active {
+                display: flex;
+            }
+
+            .nav-right {
+                display: flex;
+                flex-direction: row;
+                gap: 0.7rem;
+                align-items: center;
+            }
+
+            .linkedin-btn {
+                padding: 0.6rem 1rem;
+                font-size: 1rem;
+            }
+        }
+
+    
+        /* Improved Smartphone View for All Pages */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .about-page,
+            .education-page,
+            .skills-page,
+            .contact-page {
+                padding: 2rem 1rem;
+                width: 100%;
+                text-align: justify;
+            }
+
+            .about-page p,
+            .skills-section,
+            .contact-section,
+            .education-card {
+                width: 100%;
+                margin: 0 auto 1.5rem auto;
+                padding: 1.5rem;
+            }
+
+            .education-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .education-card-content {
+                padding: 1rem;
+                gap: 0.8rem;
+            }
+
+            .skills-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .contact-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .about-page h1,
+            .education-page h1,
+            .skills-page h1,
+            .contact-page h1 {
+                font-size: 2.2rem;
+                text-align: left;
+            }
+
+            .project-item {
+                width: 100%;
+            }
+        }
+
+    
+        /* Universal Card Glow Effect */
+        .about-page p:hover,
+        .skills-section:hover,
+        .education-card:hover,
+        .contact-section:hover,
+        .project-item:hover {
+            box-shadow: 0 0 15px var(--glow);
+        }
+
+    
+
+        /* Connect With Me Section */
+        .connect-icons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 1rem;
+        }
+
+        .connect-icons a img {
+            width: 38px;
+            height: 38px;
+            transition: all 0.3s ease;
+        }
+
+        .connect-icons a img:hover {
+            transform: translateY(-4px) scale(1.08);
+        }
+
+    </style>
+</head>
+<body data-theme="dark">
+    <header>
+        <nav>
+
+            <!-- Burger Button -->
+            <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-left" id="navLinks">
+                <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#education" class="nav-link" data-page="education">Education</a></li>
+                <li><a href="#skills" class="nav-link" data-page="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-page="projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                
+                <a href="https://www.linkedin.com/in/rajateshpaul" target="_blank" class="linkedin-btn linkedin-icon-only">
+                    <span class="linkedin-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <div class="theme-toggle-container">
+                    <img src="sun-3337_64.png" alt="Light Mode" class="theme-icon-img">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <div class="theme-slider"></div>
+                    </button>
+                    <img src="moon-6689_64.png" alt="Dark Mode" class="theme-icon-img">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home/Hero Section -->
+        <section id="home" class="page active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>Hello, I am</h2>
+                        <h1>RAJATESH PAUL</h1>
+                        <p>Welcome to my digital space where I showcase my skills, projects, and learning journey as a B.Tech student at KIIT-DU, Bhubaneswar.
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="Rajatesh_Paul.jpeg" alt="Rajatesh Paul">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Page -->
+        <section id="about" class="page">
+            <div class="about-page">
+                <h1>About Me</h1>
+                <p>I’m Rajatesh Paul, a final-year B.Tech student in Information Technology at KIIT, Bhubaneswar, with a strong foundation in Data Structures & Algorithms, Object-Oriented Programming, and Database Management Systems. I enjoy solving logical problems and building efficient solutions that are scalable and practical for real-world applications.<br><br>
+                
+                    I have a strong interest in Cloud Computing and Machine Learning, and I’m always curious about how modern technologies can be used to build secure and impactful systems. I’m skilled in C, C++, Java, Python, SQL, along with web technologies like React.js, JavaScript, HTML, and CSS, and I have hands-on experience working with tools like AWS, Git, MySQL, and Oracle DB.<br><br>
+                
+                    I also bring a creative and collaborative mindset, having worked as a Senior Creative Executive (Photography & Videography Lead) at FED KIIT, where I managed event coverage and coordinated with teams to deliver high-quality content. I believe in continuous learning, improving my skills, and staying consistent with my career goals.<br><br>
+                
+                    Apart from academics, I enjoy playing video games and watching web series, which help me relax and stay entertained with engaging stories. I’m also deeply passionate about photography, and I spend my free time capturing moments and experimenting with new techniques to enhance my creative skills.
+                </p>
+            </div>
+        </section>
+
+        
+        <!-- Education Page -->
+        <section id="education" class="page">
+            <div class="education-page">
+                <h1>My Education</h1>
+
+                <div class="contact-section">
+                    <h3><strong> Kalinga Institute of Industrial Technology (KIIT)</strong></h3>
+                    <p>Bhubaneswar, Odisha, India - 751024</p>
+                    <p><strong>Degree:</strong> B.Tech</p>
+                    <p><strong>Branch:</strong> Information Technology</p>
+                    <p><strong>CGPA:</strong> 7.53</p>
+                    <a href="RajateshPaul_Resume.pdf" class="download-btn" target="_blank"><h4> Resume </h4></a>
+                </div>
+
+                <div class="contact-section">
+                    <h3><strong> Dooars International Public School</strong></h3>
+                    <p>Cooch Behar, West Bengal, India - 736101</p>
+                    <p><strong>Degree:</strong> Senior Secondary (12th)</p>
+                    <p><strong>Board:</strong> CBSE</p>
+                    <p><strong>Grade:</strong> 81%</p>
+                </div>
+
+                <div class="contact-section">
+                    <h3><strong> Dooars International Public School</strong></h3>
+                    <p>Cooch Behar, West Bengal, India - 736101</p>
+                    <p><strong>Degree:</strong> Secondary (10th)</p>
+                    <p><strong>Board:</strong> CBSE</p>
+                    <p><strong>Grade:</strong> 78%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Page -->
+
+        <section id="skills" class="page">
+            <div class="skills-page">
+                <h1>My Skills</h1>
+
+                <div class="skills-section">
+                    <h3>Languages</h3>
+                    <p>C, C++, C#, Python3, Java, JavaScript, HTML, CSS, SQL, Kotlin</p>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Software Tools</h3>
+                    <p>MySQL, AutoCAD, SolidWorks, MS Word, MS PowerPoint, MS Excel, Amazon Web Services(AWS), Figma</p>
+                </div>
+
+                <div class="skills-section">
+                    <h3>IDEs</h3>
+                    <p>VS Code, Intellij IDEA, Jupiter Notebook, AndroidStudio</p>
+                </div>
+
+                
+            </div>
+        </section>
+
+        
+        
+        
+        <!-- Projects Page -->
+        <section id="projects" class="page">
+            <div class="contact-page">
+                <h1>My Projects</h1>
+
+                <div class="contact-section">
+                    <h3><Strong>1. Parkinson’s Disease Detection using Machine Learning</Strong></h3>
+                    <p> • Designed and implemented an SVM-based classification model for Parkinson’s disease detection using voice features, achieving 87.17% prediction accuracy.<br>
+                        • Performed data preprocessing, feature extraction (MDVP, jitter, shimmer), and exploratory data analysis (EDA) on medical voice datasets to improve model performance.<br>
+                        • Evaluated the model using confusion matrix, accuracy, precision, recall, and F1-score, ensuring reliability and interpretability of results.<br>
+                        <a href="https://github.com/Rajatesh-Paul/Parkinson-s_Disease_Detection_Using_ML" target="_blank">GitHub link</a><br>
+                    </p>
+                        
+                    <h3><strong>2. Cloud-Based Secure File Management System</Strong></h3>
+                    <p> • Developed a responsive web interface using React.js for secure file upload and management.<br>
+                        • Implemented user authentication and authorization using Amazon Cognito, supporting secure sign-up and login.<br>
+                        • Integrated Cognito Identity Pools with IAM roles to provide controlled, temporary access to cloud resources.<br>
+                        • Configured per-user file isolation and stored data securely in Amazon S3 with server-side encryption (SSE-S3)<br>
+                        <a href="https://github.com/Rajatesh-Paul/Cloud-Based_Secure_File_Management_System" target="_blank">GitHub link</a><br>
+                    </p>
+
+                    <h3><strong>3. Portfolio Website</strong></h3>
+                    <p>• Developed a responsive personal portfolio website using HTML, CSS, and JavaScript to showcase professional profile, education, skills, projects, and contact details.<br>
+                        • Implemented dynamic page navigation and section rendering using JavaScript DOM manipulation to enhance user experience.<br>
+                        • Integrated Dark/Light theme switching functionality using CSS variables and localStorage for persistent UI personalization.<br>
+                        • Designed a mobile-responsive interface with a burger menu navigation system, animations, and modern UI components.<br>
+                        <a href="https://github.com/Rajatesh-Paul/Portfolio" target="_blank">GitHub link</a><br>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+
+
+        <section id="contact" class="page">
+            <div class="contact-page">
+                <h1>My Contact info.</h1>
+
+                <div class="contact-section">
+                    <h3><strong>Email ID</strong></h3>
+                    <p><a href="mailto:rajateshpaul@gmail.com">rajateshpaul@gmail.com</a></p>
+                    <p><a href="mailto:2206199@kiit.ac.in">2206199@kiit.ac.in</a></p>
+                </div>
+
+                <div class="contact-section">
+                    <h3><Strong>Phone No.</Strong></h3>
+                    <p>+91-9706063716</p>
+                </div>
+
+                <div class="contact-section">
+                    <h3><strong>Address</strong></h3>
+                    <h4>Correspondence Address:</h4></p>
+                    <p>KP-12, Campus 6, KIIT University</p>
+                    <p>Patia, Bhubaneswar</p>
+                    <p>Odisha, India - 751024</p>
+                </div>
+            
+                <div class="contact-section">
+                    <h3><strong>Connect with me:</strong></h3>
+                    <div class="connect-icons">
+                        <a href="https://github.com/Rajatesh-Paul" target="_blank">
+                            <img src="github.png" alt="GitHub">
+                        </a>
+                        <a href="https://www.linkedin.com/in/rajateshpaul" target="_blank">
+                            <img src="linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="instagram.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+</div>
+        </section>
+    </main>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const bodyElement = document.body;
+
+        // Set initial theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        bodyElement.setAttribute('data-theme', savedTheme);
+
+        // Toggle theme function
+        function toggleTheme() {
+            const currentTheme = bodyElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            bodyElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            console.log('Theme changed to:', newTheme); // Debug log
+        }
+
+        // Add click event to button
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        
+        // Also make the container clickable
+        const themeToggleContainer = document.querySelector('.theme-toggle-container');
+        if (themeToggleContainer) {
+            themeToggleContainer.addEventListener('click', function(e) {
+                // Only toggle if clicking on the container or icons, not the button itself
+                if (e.target !== themeToggle) {
+                    toggleTheme();
+                }
+            });
+        }
+
+        // Navigation & Page Switching
+        const pages = document.querySelectorAll('.page');
+        const navLinksContainer = document.getElementById('navLinks');
+
+        function showPage(pageName) {
+            // Hide all pages
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const selectedPage = document.getElementById(pageName);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            // Update navbar
+            updateNavbar(pageName);
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateNavbar(activePage) {
+            const allPages = [
+                { id: 'about', label: 'About' },
+                { id: 'education', label: 'Education' },
+                { id: 'skills', label: 'Skills' },
+                { id: 'projects', label: 'Projects' },
+                { id: 'contact', label: 'Contact' }
+            ];
+
+            // Clear navbar
+            navLinksContainer.innerHTML = '';
+
+            // If not on home page, add Home link first
+            if (activePage !== 'home') {
+                const homeLi = document.createElement('li');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#home';
+                homeLink.className = 'nav-link';
+                homeLink.setAttribute('data-page', 'home');
+                homeLink.textContent = 'Home';
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage('home');
+                });
+                homeLi.appendChild(homeLink);
+                navLinksContainer.appendChild(homeLi);
+            }
+
+            // Add all pages except the active one
+            allPages.forEach(page => {
+                if (page.id !== activePage) {
+                    const li = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = `#${page.id}`;
+                    link.className = 'nav-link';
+                    link.setAttribute('data-page', page.id);
+                    link.textContent = page.label;
+                    
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        showPage(page.id);
+                    });
+                    
+                    li.appendChild(link);
+                    navLinksContainer.appendChild(li);
+                }
+            });
+        }
+
+        // Initial setup
+        showPage('home');
+    
+        // Burger Navbar Toggle
+        const burgerBtn = document.getElementById("burgerBtn");
+
+        if (burgerBtn) {
+            burgerBtn.addEventListener("click", () => {
+                const navLeft = document.getElementById("navLinks");
+                if (navLeft) {
+                    navLeft.classList.toggle("active");
+                }
+            });
+        }
+
+        // Close mobile menu when a nav link is clicked
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('nav-link')) {
+                const navLeft = document.getElementById("navLinks");
+                if (navLeft) {
+                    navLeft.classList.remove("active");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
