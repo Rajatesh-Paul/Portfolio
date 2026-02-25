@@ -1265,8 +1265,9 @@
             
             bodyElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            
+            updateProjectIcons();
             console.log('Theme changed to:', newTheme); // Debug log
+            
         }
 
         // Add click event to button
